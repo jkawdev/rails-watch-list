@@ -1,0 +1,20 @@
+<%= @list.name %>
+
+<% @list.movies.each do |movie| %>
+<div class="row">
+  <%= movie.title %>
+  <% @list.bookmarks.each do |bookmark| %>
+    <li class="list-group-item"><%= bookmark.comment %></li>
+  <% end %>
+</div>
+<% end %>
+
+
+
+
+<p><%= link_to "Marque-page", new_list_bookmark_path(@list) %></p>
+<p><%= link_to "Home", lists_path %></p>
+
+<%# ajoute un bouton movie qui redirige vers le path new_bookmark %>
+  <%# afficher ts les movies %>
+  <%# permettre de bookmarker un movie et mettre un comment %>
