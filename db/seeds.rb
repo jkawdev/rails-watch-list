@@ -20,7 +20,7 @@ movies_data = URI.open(url).read
 movies = JSON.parse(movies_data)
 
 movies['results'].each do |result|
-  Movie.create(title: result['title'], overview: result['overview'], rating: result['vote_average'].to_i, poster_url: "https://image.tmdb.org/t/p/original#{ result['poster_path'] }")
+  Movie.create(title: result['title'], overview: result['overview'], rating: result['vote_average'].to_i, poster_url: "https://image.tmdb.org/t/p/w500#{ result['poster_path'] }")
 end
 
 
